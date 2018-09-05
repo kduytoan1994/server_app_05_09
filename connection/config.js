@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports = {
-  server_link: "http://207.148.122.234:8008/api/",
+  server_link: "http://207.148.122.234:5000/api/",
   proxy: "207.148.122.234",
   host: "8008",
   command:  { login: "login",
