@@ -1,0 +1,115 @@
+#addLend {
+  min-height: calc(100vh - 90px);
+  padding-top: 100px;
+  background: #808080;
+}
+
+/* For addLend part */
+
+section#addLend input.form-control,
+section#addLend textarea.form-control,
+section#addLend select.form-control {
+  padding: 7px;
+  margin: 0 auto;
+  font-size: 14px;
+  border-radius: 0px;
+}
+
+section#addLend textarea.form-control {
+  border-radius: 0px;
+  width: 100%;
+  font-weight: normal!important;
+}
+
+section#addLend #submitButton {
+  margin-top: 30px;
+}
+
+section#addLend .box-add-lend {
+  background: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+section#addLend .box-add-lend .section-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+section#addLend #addLendForm {
+  margin-top: 30px;
+}
+
+section#addLend .input-information {
+  border-bottom: 1px solid #e9ecef;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+section#addLend .header-jumbotron {
+  padding: 0px 0px;
+  min-width: 50%;
+  text-align: start;
+  border-right: 5px solid transparent;
+  font-size: 18px;
+}
+
+section#addLend .jumbotron {
+  padding: 10px 15px;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  background: #EFF8FB;
+} 
+
+section#addLend .jumbotron .row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* Modal information */
+
+.asio-modal {
+  padding-right: 0px !important;
+}
+
+.asio-modal .modal-dialog {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  max-width: 600px;
+}
+
+.asio-modal .modal-dialog .modal-content {
+  border-radius: 0px!important;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area {
+  text-align: center;
+  width: 100%;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area img {
+  width: 40px;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area a {
+  color: #0da8e9;
+}
+
+.asio-modal .modal-dialog .header-jumbotron {
+  padding: 0px 0px;
+  min-width: 50%;
+  border-right: 5px solid transparent;
+}
+
+.asio-modal .modal-dialog .jumbotron {
+  padding: 10px 15px;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  background: #EFF8FB;
+} 
+
+.asio-modal .modal-dialog .jumbotron .row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

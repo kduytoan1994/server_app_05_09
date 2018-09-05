@@ -1,0 +1,136 @@
+<div class="asio-modal modal fade " id="homestayInformationModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content book-effect">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="d-block icon-area">
+          <div>
+            <img class="m-auto" src="img/icon/homestay.png" />
+          </div>
+          <div>
+            <a class="m-auto text-primary font-weight-bold" id="modalHomeStay_Name">A Vien Homestay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body scrollbar-div">
+
+        <div class="basic-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Host Information</span>
+          </div>
+          <div class="jumbotron">
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Full name:</div>
+              <div class="col-md-7" id="modalHomeStay_HostName"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Address:</div>
+              <div class="col-md-7" id="modalHomeStay_HostAddress"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Phone number:</div>
+              <div class="col-md-7" id="modalHomeStay_HostPhone"></div>
+            </div>
+    
+          </div>
+
+        </div>
+
+        <hr class="hr-giant" />
+
+        <div class="advance-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Homestay Information</span>
+          </div>
+          <div class="jumbotron">
+
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Type homestay:</div>
+              <div class="col-md-7" id="modalHomeStay_Type"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Address:</div>
+              <div class="col-md-7" id="modalHomeStay_Address"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Description:</div>
+              <div class="col-md-7" id="modalHomeStay_Description"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <hr class="hr-giant" />
+
+        <div class="advance-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Advance homestay info</span>
+          </div>
+          <div class="jumbotron">
+            <div class="row not-margin-row">
+              <div class="col-md-6 font-weight-bold">Distance to service center:</div>
+              <div class="col-md-6" id="modalHomeStay_distance_center"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-6 font-weight-bold">Distance to main road:</div>
+              <div class="col-md-6" id="lmodalHomeStay_distance_mainroad"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-6 font-weight-bold">Distance to diff homestay:</div>
+              <div class="col-md-6" id="modalHomeStay_diff_homestay"></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="hr-giant" />
+
+        <div class="advance-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Photos</span>
+          </div>
+          <div class="jumbotron" id="modalHomeStay_ListPhotos">
+          </div>
+          <div class="jumbotron text-center" id="modalHomeStay_NoPhoto">
+            <span class="text-muted mt-3 mb-3">No photo</spanp>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+
+      <% if ((typeof disable_choose_loan == undefined || disable_choose_loan == false) && session.login_status && session.permission == session.INVESTOR) { %>
+
+        <div class="modal-footer">
+        <div class="row not-margin-row w-100">
+          <div class="col-6 pl-0">
+            <a class="btn btn-primary btn-sm text-uppercase choose-loan-button">Choose loan</a>
+          </div>
+
+          <div class="col-6 pr-0">
+            <a class="btn btn-danger btn-sm float-right text-white" data-dismiss="modal" data-target="homestayInformationModal">Close</a>
+          </div>
+        </div>
+      </div>
+
+      <% } else { %>
+
+      <div class="modal-footer text-center">
+        <a class="text-muted m-auto" href="" data-dismiss="modal" data-target="homestayInformationModal">Close</a>
+      </div>
+
+      <% } %>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/modal/home_stay_modal.js"></script>

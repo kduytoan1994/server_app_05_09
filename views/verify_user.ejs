@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<% var title="Asio Lending" %>
+<%- include partial/header %>
+
+<head>
+  <link href="css/verify_user.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+  <div class="body-container">
+    <!-- Menu -->
+    <% var navshink="navbar-shrink" %>
+    <%- include partial/menu %>
+
+    <hr class="hr-small">
+
+    <section id="verifyUserFirst">
+      <div class="container big-container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 text-center box-vertify">
+            <div class="text-center">
+              <p class="section-heading">Step 1: Please verify your email</p>
+              <hr class="hr-primary" />
+            </div>
+
+            <form id="verifyUserStep1" name="verifyUserStep1">
+              <div class="form-group">
+                <input class="form-control m-auto" id="emailVerify" type="email" placeholder="Please enter your email" />
+              </div>
+              <div>
+                <a class="btn btn-primary text-white mt-4" id="submitStep1">Send verify email</a>
+              </div>
+              <div class="mt-5 d-block">
+                <p class="text-muted noticeVerify m-0">Please check your mail box and click on verify link. </p>
+
+                <p class="text-muted noticeVerify m-0">After that, you can
+                  <a class="text-primary">REFRESH</a> this link to go to step 2. </p>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="verifyUserSecond">
+      <div class="container big-container">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 text-center box-vertify">
+            <div class="text-center">
+              <p class="section-heading">Step 2: Please add your information</p>
+              <hr class="hr-primary" />
+            </div>
+
+            <form id="verifyUserStep2" name="verifyUserStep2">
+
+              <div class="form-group mt-2">
+                <input class="form-control" id="registeredPlace" type="text" placeholder="Registered permanent residence">
+              </div>
+              <div class="form-group mt-2">
+                <input class="form-control" id="idNumber" type="number" placeholder="ID number">
+              </div>
+              <div class="form-group mt-2">
+                <input class="form-control" id="companyName" type="text" placeholder="Company name">
+              </div>
+              <div class="form-group mt-2">
+                <input class="form-control" id="jobName" type="text" placeholder="Job / Major">
+              </div>
+              <div class="form-group mt-2">
+                <input class="form-control" id="address" type="text" placeholder="Address">
+              </div>
+
+              <div class="mt-5 d-block">
+                <p class="text-muted noticeVerify m-0">* All your personal information will be secure. </p>
+              </div>
+
+              <div>
+                <a class="btn btn-primary text-white mt-3" id="#submitStep2" href="index_log_in.html">Submit add information</a>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include partial/footer %>
+  </div>
+
+  <%- include partial/common_javascript %>
+
+  <script src="js/verify_user.js"></script>
+</body>
+
+</html>

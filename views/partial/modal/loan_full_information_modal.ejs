@@ -1,0 +1,154 @@
+<div class="asio-modal modal fade" id="loanFullInformationModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="d-block icon-area">
+          <div>
+            <img class="m-auto" src="img/icon/icons-money.png" />
+          </div>
+          <div>
+            <a class="m-auto text-primary font-weight-bold">Loan information</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body scrollbar-div">
+
+        <div class="basic-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Money and range time</span>
+          </div>
+          <div class="jumbotron">
+            
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Borrow money:</div>
+              <div class="col-md-7 font-weight-bold text-primary" id="loanFullInformation_money"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Due date:</div>
+              <div class="col-md-7" id="loanFullInformation_dueDate"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Range time:</div>
+              <div class="col-md-7" id="loanFullInformation_rangeTime"></div>
+            </div>
+            <hr class="hr-tiny for-package-list" />
+            <div class="row not-margin-row for-package-list">
+              <div class="col-md-5 font-weight-bold">List packages:</div>
+              <div class="col-md-7" id="listPackages">
+                
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <hr class="hr-giant" />        
+
+        <div class="basic-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Host Information</span>
+          </div>
+          <div class="jumbotron">
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold text-left">Full name:</div>
+              <div class="col-md-7 text-left"><%= host.name %></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold text-left">Address:</div>
+              <div class="col-md-7 text-left"><%= host.address %></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold text-left">Email:</div>
+              <div class="col-md-7 text-left"><%= host.email %></div>
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="hr-giant" />
+
+        <div class="advance-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Homestay Information</span>
+          </div>
+          <div class="jumbotron">
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Home stay name:</div>
+              <div class="col-md-7 font-weight-bold text-primary" id="loanFullInformation_name"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Type homestay:</div>
+              <div class="col-md-7" id="loanFullInformation_type"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Address:</div>
+              <div class="col-md-7" id="loanFullInformation_address"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Description:</div>
+              <div class="col-md-7" id="loanFullInformation_description"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <hr class="hr-giant" />
+
+        <div class="advance-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Advance homestay info</span>
+          </div>
+          <div class="jumbotron">
+            <div class="row not-margin-row">
+              <div class="col-md-6 font-weight-bold">Distance to service center:</div>
+              <div class="col-md-6" id="loanFullInformation_distance_center"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-6 font-weight-bold">Distance to main road:</div>
+              <div class="col-md-6" id="loanFullInformation_distance_mainroad"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-6 font-weight-bold">Distance to diff homestay:</div>
+              <div class="col-md-6" id="loanFullInformation_diff_homestay"></div>
+            </div>
+          </div>
+        </div>
+            
+        <hr class="hr-giant" />
+        <div class="advance-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Photos</span>
+          </div>
+          <div class="jumbotron row not-margin-row" id="loanFullInformation_listPhotos">
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <div class="row not-margin-row w-100">
+          <div class="col-6 pl-0">
+            <a id="submitRegisterLoan" class="btn btn-primary btn-sm text-uppercase text-white">Submit register</a>
+          </div>
+
+          <div class="col-6 pr-0">
+            <a class="btn btn-danger btn-sm float-right text-white" data-dismiss="modal" data-target="loanFullInformationModal">Close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

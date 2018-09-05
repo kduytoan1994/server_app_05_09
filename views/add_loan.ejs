@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% var title="Asio Lending" %>
+<%- include partial/header %>
+
+<head>
+
+  <link href="css/add_loan.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <div class="body-container">
+    <!-- Menu -->
+    <% var navshink="navbar-shrink" %>
+    <%- include partial/menu %>
+
+    <hr class="hr-small">
+
+    <section id="addLend">
+      <div class="container big-container">
+        <div class="row">
+          <div class="col-lg-2"></div>
+
+          <div class="col-lg-8 text-center box-add-lend book-effect">
+            <div class="text-center">
+              <p class="section-heading text-uppercase">Register A Loan</p>
+              <hr class="hr-primary" />
+            </div>
+
+            <form id="addLendForm" name="formAddLend">
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10 box-information">
+                  <div class="header-jumbotron">
+                    <span class="text-primary font-weight-bold">Host information *</span>
+                  </div>
+                  <div class="jumbotron">
+                    <div class="jumbotron">
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold text-left">Full name:</div>
+                        <div class="col-md-7 text-left"><%= host.name %></div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold text-left">Address:</div>
+                        <div class="col-md-7 text-left"><%= host.address %></div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold text-left">Email:</div>
+                        <div class="col-md-7 text-left"><%= host.email %></div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="hr-giant" />
+
+                  <div class="header-jumbotron mt-3">
+                    <span class="text-primary font-weight-bold">Homestay information *</span>
+                  </div>
+                  <div class="jumbotron">
+                    <div class="row mt-2">
+                      <div class="col-12">
+                        <% var have_all_results = false %>
+                        <% var have_style = "input-small-height" %>
+
+                        <%- include partial/input/choose_type %>
+                      </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                      <div class="col-12">
+                        <span class="text-muted float-left font-weight-bold">Homestay name</span>
+                        <input class="form-control w-100 input-small-height" id="nameHomestay" type="text">
+                      </div>
+                    </div>
+
+                    <div class="row mt-3">
+                      <div class="col-12">
+                        <span class="text-muted float-left font-weight-bold">Homestay address</span>
+                        <input class="form-control w-100 input-small-height" id="addressHomestay" type="text">
+                      </div>
+                    </div>
+
+                    <div class="row mt-3">
+                      <div class="col-12">
+                        <span class="text-muted float-left font-weight-bold">Homestay description</span>
+                        <textarea class="form-control input-small-height" id="descriptionHomestay" rows="5"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="row mt-3">
+                      <div class="col-12">
+                        <form  enctype="multipart/form-data">
+                          <span class="text-muted float-left font-weight-bold">Homestay photos (1-4)</span>
+                          <input type="file" class="form-control-file border" id="photoHomestay" accept="image/x-png,image/gif,image/jpeg" multiple>
+                        </form>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <hr class="hr-giant" />
+
+                  <div class="header-jumbotron">
+                    <span class="text-primary font-weight-bold">Advance information</span>
+                  </div>
+                  <div class="jumbotron">
+                    <div class="row mt-2">
+                      <div class="col-6">
+                        <span class="text-muted float-left text-left pt-md-3">Distance to service center</span>
+                      </div>
+                      <div class="col-6">
+                        <input class="form-control w-75 float-left input-small-height" id="distanceToCenter" type="number"> 
+                        <div class="pt-3">
+                          <span class="unit-money text-primary">KM</span>
+                        </div>                       
+                      </div>
+                    </div>
+
+                    <div class="row mt-3">
+                      <div class="col-6">
+                        <span class="text-muted float-left text-left pt-md-3">Distance to main road</span>
+                      </div>
+                      <div class="col-6">
+                        <input class="form-control w-75 float-left input-small-height" id="distanceToMainRoad" type="number"> 
+                        <div class="pt-3">
+                          <span class="unit-money text-primary">KM</span>
+                        </div>                       
+                      </div>
+                    </div>
+
+                    <div class="row mt-3">
+                      <div class="col-6">
+                        <span class="text-muted float-left text-left pt-md-3">Distance to diff homestay</span>
+                      </div>
+                      <div class="col-6">
+                        <input class="form-control w-75 float-left input-small-height" id="distanceToDiffHomestay" type="number"> 
+                        <div class="pt-3">
+                          <span class="unit-money text-primary">KM</span>
+                        </div>                       
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="hr-giant" />
+
+                  <div class="header-jumbotron">
+                    <span class="text-primary font-weight-bold">Borrow money *</span>
+                  </div>
+                  <div class="jumbotron">
+                    <div class="row mt-2">
+                      <div class="col-md-5 font-weight-bold text-left pt-3 text-muted">Total money:</div>
+                      <div class="col-md-7">
+                        <input class="form-control w-75 float-left box-money font-weight-bold text-primary" type="text" id="loanMoney" onkeyup="convert(this);">
+                        <div class="pt-3">
+                          <span class="unit-money text-primary font-weight-bold">VND</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <hr class="hr-tiny for-table-interest" />
+                    <div class="row mt-2 for-table-interest">
+                      <div class="col-md-5 font-weight-bold text-left text-muted">Table interest range:</div>
+
+                      <div class="col-md-7">
+                        <table class="table table-bordered border-0 table-interest text-left">
+                          <thead>
+                            <tr class="bg-primary text-white">
+                              <th style="width: 60%">Money</th>
+                              <th style="width: 40%">Interest</th>
+                            </tr>
+                          </thead>
+                          <tbody id="listMoneyInterest">
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="hr-giant" />
+
+                  <div class="header-jumbotron mt-3">
+                    <span class="text-primary font-weight-bold">Loan milestone *</span>
+                  </div>
+                  <div class="jumbotron">
+                    <div class="row mt-2">
+                      <div class="col-md-6">
+                        <span class="text-muted float-left font-weight-bold">Due date</span>
+                        <input class="form-control input-small-height" id="dueDate" type="date" />
+                        <small class="text-muted float-left text-left">* on that time, loan will be removed if it can't call 100% of total loan money.</small>
+                      </div>
+                      <div class="col-md-6 pt-3 pt-md-0">
+                        <span class="text-muted float-left font-weight-bold">Borrow time </span>
+                        <select class="form-control input-small-height" id="rangeTime">
+                          <option value="3">3 months</option>
+                          <option value="4">4 months</option>
+                          <option value="5">5 months</option>
+                          <option value="6">6 months</option>
+                          <option value="7">7 months</option>
+                          <option value="8">8 months</option>
+                          <option value="9">9 months</option>
+                          <option value="10">10 months</option>
+                          <option value="11">11 months</option>
+                          <option value="12">12 months</option>
+                        </select>
+                      </div>
+
+                      <input type="hidden" id="idHost" value=<%= id %> >
+                    </div>
+                  </div>
+
+                  <hr class="hr-giant" />
+                  <div class="clearfix"></div>
+
+                  <div class="col-lg-12 text-center">
+                    <a class="btn btn-primary text-uppercase text-white" id="submitAddLoan">Register Loan</a>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <%- include partial/footer %>
+  </div>
+
+  <%- include partial/common_javascript -%>
+
+  <%- include partial/modal/loan_full_information_modal -%>
+
+  <script src="js/add_loan.js"></script>
+
+</body>
+
+</html>

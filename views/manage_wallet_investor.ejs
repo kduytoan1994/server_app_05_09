@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% var title="Asio Lending" %>
+<%- include partial/header %>
+
+<head>
+
+  <link href="css/manage_wallet.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <div class="body-container">
+    <!-- Menu -->
+    <% var navshink="navbar-shrink" %>
+    <%- include partial/menu %>
+
+    <div id="manageWallet">
+      <section id="walletManaging">
+        <div class="container-fluid">
+          <div class="row not-margin-row">
+            <div class="col-md-4 p-2">
+              <div class="left-side-info">
+                <div class="avatar-name row not-margin-row mb-3">
+                  <div class="avatar col-3">
+                    <img src="<%= (result.avatar == "" ||  result.avatar == undefined) ? 'img/icon/icons-user.png' : result.avatar %>">
+                  </div>
+                  <div class="name col-9">
+                    <span class="text-primary font-weight-bold"><%= result.name  %></span>
+                    <br>
+                    <span class="text-muted">
+                      <%= result.email  %>
+                    </span>
+                    <br>
+                    <span class="text-muted">
+                      <b class="small">Asio Investor</b>
+                    </span>
+                  </div>
+                </div>
+
+                <hr class="hr-padding" />
+
+                <div class="bonus-information mt-3 mb-3">
+                  <div class="row not-margin-row">
+                    <div class="col-md-6">
+                      <p class="text-muted font-weight-bold mb-2">Lending money: </p>
+                    </div>
+
+                    <div class="col-md-6">
+                      <p class="text-muted text-primary"><%= result.lending_money  %> VND </p>
+                    </div>
+                  </div>
+
+                  <div class="row not-margin-row">
+                    <div class="col-md-6">
+                      <p class="text-muted font-weight-bold mb-2">Lended money: </p>
+                    </div>
+
+                    <div class="col-md-6">
+                      <p class="text-muted text-primary"><%= result.lended_money  %> VND </p>
+                    </div>
+                  </div>
+
+                </div>
+
+                <hr class="hr-padding" />
+
+                <div class="money-information mt-3 mb-3">
+                  <div class="row not-margin-row">
+                    <div class="col-md-6">
+                      <p class="text-muted font-weight-bold mb-2">Available money </p>
+                    </div>
+
+                    <div class="col-md-6">
+                      <p class="text-danger font-weight-bold"><%= result.available_money %> VND </p>
+                    </div>
+                  </div>
+
+                  <div class="money-option row not-margin-row mt-3">
+                    <div class="col-8">
+                      <a id="addToWallet" class="btn btn-success text-uppercase text-white">Add to wallet</a>
+                    </div>
+                    <div class="col-4">
+                      <a id="withdrawMoney" class="btn btn-warning text-uppercase text-white">
+                        <img class="rounded" src="img/icon/ic_withdraw.png" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-8 p-2">
+              <div class="right-side-list">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link font-weight-bold click-registered" data-toggle="tab" href="#registeredLoan">Registered</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active font-weight-bold click-on-going" data-toggle="tab" href="#currentLoan">On-going</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link font-weight-bold click-completed" data-toggle="tab" href="#completedLoan">Completed</a>
+                  </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div class="tab-pane container fade pt-3" id="registeredLoan">
+                    <div class="card card-not-padding m-auto" id="tableRegisteredLoan">
+                      <div class="card-header text-center">
+                        <h6>
+                          List of Registered lendings
+                        </h6>
+                        <hr class="hr-primary" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row not-margin-row top-table-loan have-element">
+                          <div class="col-list-item col-md-4 col-5">
+                            <span class="center-horizontal font-weight-bold">Loan name</span>
+                          </div>
+
+                          <div class="col-list-item col-md-3 col-4">
+                            <span class="center-horizontal font-weight-bold">Total money</span>
+                          </div>
+
+                          <div class="col-list-item col-md-3 d-none d-md-block">
+                            <span class="center-horizontal font-weight-bold">Your packages</span>
+                          </div>
+
+                          <div class="col-list-item col-md-2 col-3">
+                            <span class="center-total font-weight-bold">Option</span>
+                          </div>
+                        </div>
+
+                        <div class="content-table-loan have-element" id="contentTableRegistered">  
+                        </div>
+
+                        <div class="not-have-element text-muted mt-5">
+                          <span>Empty table content.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane active container pt-3" id="currentLoan">
+                    <div class="card card-not-padding m-auto" id="tableCurrentLoan">
+                      <div class="card-header text-center">
+                        <h6>
+                          List of On-Going lendings
+                        </h6>
+                        <hr class="hr-primary" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row not-margin-row top-table-loan have-element">
+                          <div class="col-list-item col-lg-4 col-md-4 col-4">
+                            <span class="center-horizontal font-weight-bold">Loan name</span>
+                          </div>
+
+                          <div class="col-list-item col-lg-3 col-md-4 col-4">
+                            <span class="center-horizontal font-weight-bold">Lend money</span>
+                          </div>
+
+                          <div class="col-list-item col-lg-2 d-none d-md-block">
+                            <span class="center-horizontal font-weight-bold">Time lend</span>
+                          </div>
+
+                          <div class="col-list-item col-lg-3 col-md-4 col-4">
+                            <span class="center-horizontal font-weight-bold">Interest Next-Recv</span>
+                          </div>
+                        </div>
+
+                        <div class="content-table-loan have-element" id="contentTableOnGoing">
+                         
+                        </div>
+                        <div class="not-have-element text-muted mt-5">
+                          <span>Empty table content.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane container fade pt-3" id="completedLoan">
+                    <div class="card card-not-padding m-auto" id="tableCompletedLoan">
+                      <div class="card-header text-center">
+                        <h6>
+                          List of Completed lendings
+                        </h6>
+                        <hr class="hr-primary" />
+                      </div>
+                      <div class="card-body">
+                        <div class="row not-margin-row top-table-loan have-element">
+                          <div class="col-list-item col-4">
+                            <span class="center-horizontal font-weight-bold">Loan name</span>
+                          </div>
+
+                          <div class="col-list-item col-4">
+                            <span class="center-horizontal font-weight-bold">Lend money</span>
+                          </div>
+
+                          <div class="col-list-item col-4">
+                            <span class="center-horizontal font-weight-bold">Time lend</span>
+                          </div>
+                        </div>
+
+                        <div class="content-table-loan have-element" id="contentTableCompleted">
+                          
+                        </div>
+
+                        <div class="not-have-element text-muted mt-5">
+                          <span>Empty table content.</span>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+    
+    <%- include partial/footer %>
+  </div>
+
+  <%- include partial/common_javascript %>
+
+  <% var disable_choose_loan = true %>
+
+  <%- include partial/modal/lend_full_information_modal %>
+
+  <%- include partial/modal/loan_package_money_modal %>
+
+  <%- include partial/modal/home_stay_modal %>
+
+  <%- include partial/modal/add_to_wallet_modal %>
+
+  <%- include partial/modal/withdraw_modal %>
+
+  <script src="js/manage_wallet_investor.js"></script>
+
+</body>
+
+</html>

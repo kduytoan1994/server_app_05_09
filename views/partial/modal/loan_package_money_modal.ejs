@@ -1,0 +1,107 @@
+<div class="asio-modal modal fade" id="packageLoanInformationModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content  book-effect">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="d-block icon-area">
+          <div>
+            <img class="m-auto" src="img/icon/icons-money.png" />
+          </div>
+          <div>
+            <a class="m-auto text-primary font-weight-bold">Loan information</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body scrollbar-div">
+
+        <div class="basic-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Money and range time</span>
+          </div>
+          <div class="jumbotron">
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Borrow money:</div>
+              <div class="col-md-7" id="modalLoanInformation_Total"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Expiration date:</div>
+              <div class="col-md-7">
+                <span id="modalLoanInformation_DueDate"></span>
+                <a data-toggle="tooltip" title="This loan will be removed if it is not finished in the end of Expiration date.">
+                  &nbsp
+                  <i class="fas fa-info-circle"></i>
+                </a>
+              </div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Max interest rate:</div>
+              <div class="col-md-7"><span id="modalLoanInformation_Interest"></span>% / month</div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Total time:</div>
+              <div class="col-md-7"><span id="modalLoanInformation_RangeTime"></span> months</div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="hr-giant" />
+
+        <div class="advance-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Current Loan status</span>
+          </div>
+          <div class="jumbotron">
+
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">List remain packages:</div>
+              <div class="col-md-7" id="modalLoanInformation_RemainPackage">
+                
+              </div>
+            </div>
+            <hr class="hr-tiny" />
+
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">List called packages:</div>
+              <div class="col-md-7" id="modalLoanInformation_CalledPackage">
+                
+              </div>
+            </div>
+            <hr class="hr-tiny" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <% if ((disable_choose_loan === undefined || disable_choose_loan === false) && session.login_status && session.permission == session.INVESTOR) { %>
+    
+      <div class="modal-footer">
+        <div class="row not-margin-row w-100">
+          <div class="col-6 pl-0">
+            <a class="btn btn-primary btn-sm text-uppercase choose-loan-button" href="submit_lending">Choose loan</a>
+          </div>
+
+          <div class="col-6 pr-0">
+            <a class="btn btn-danger btn-sm float-right text-white" data-dismiss="modal" data-target="packageLoanInformationModal">Close</a>
+          </div>
+        </div>
+      </div>
+      
+      <% } else { %>
+     
+      <div class="modal-footer text-center">
+        <a class="text-muted m-auto" href="" data-dismiss="modal" data-target="packageLoanInformationModal">Close</a>
+      </div>
+
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<script src="js/modal/loan_package_money_modal.js"></script>
+
+

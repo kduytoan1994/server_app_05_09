@@ -1,0 +1,473 @@
+/* For background part */
+
+.carousel-item {
+  height: 70vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+.carousel-item#firstBackground {
+  background-image: url('../img/bg-1.jpg')
+}
+
+.carousel-item#secondBackground {
+  background-image: url('../img/bg-2.jpg')
+}
+
+.carousel-item#firstBackground .carousel-caption {
+  background: rgba(90, 70, 58, 0.5);
+
+}
+.carousel-item#secondBackground .carousel-caption {
+  background: rgba(13, 186, 233, 0.5);
+}
+
+.carousel-item .carousel-caption {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.carousel-item .carousel-caption .odometer {
+  font-size: 2.2em;
+  background-image: unset!important;
+  background-color: transparent;
+  color: #ffff00;
+  border: 0px;
+}
+
+.carousel-item .carousel-caption .btn-warning {
+  background: #ffa500;
+}
+
+@media (max-width: 992px) {
+  .carousel-item .carousel-caption .odometer {
+    font-size: 1.3em;
+  }
+}
+
+.carousel .carousel-indicators .active{
+  background-color: #0da8e9;
+} 
+
+.carousel .carousel-control-next .carousel-control-next-icon, .carousel .carousel-control-prev .carousel-control-prev-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* For showing number ananysis */
+
+#analysisPart {
+  position:relative;
+  min-height: 30vh;
+  overflow: auto;
+  background: #EFF8FB;
+}
+
+#analysisPart .element-analysis {
+  text-align: center;
+  align-items: center;
+}
+
+#analysisPart .element-analysis .content-analysis .number-analysis span {
+  font-size: 30px;
+  color: #0da8e9!important;
+  font-weight: bold;
+}
+
+#analysisPart .element-analysis .content-analysis .unit-analysis {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+#analysisPart .background-image {
+  position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background:url('../img/system.jpg');
+  background-size:cover;
+  background-position: center center;    
+	z-index:1;
+	-webkit-filter: blur(50px);
+  -moz-filter: blur(50px);
+  -o-filter: blur(50px);
+  -ms-filter: blur(50px);
+  filter: blur(50px);	
+  opacity: 0.5;  
+}
+
+#analysisPart .row {
+  height: 30vh;
+  position:relative;
+  z-index:2;
+}
+
+/* For Table list booking */
+
+#tableBooking .card {
+  max-width: 1000px;
+  font-size: 15px;
+}
+/* #tableBooking #tableListLending {
+  height: 500px;
+} */
+
+#tableBooking .top-table-booking {
+  height: 80px;
+  background-color: #0da8e9;
+  border: 1px solid #c9c9c9;
+  border-right: 0px;
+  font-size: 16px;
+  color: white;
+}
+
+#tableBooking .element-table-booking {
+  height: 100px;
+  width: unset;
+  border-left: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+  font-size: 14px;
+}
+
+#tableBooking .col-list-item {
+  border-right: 1px solid #c9c9c9;
+  align-items: center;
+  padding-left: 8px!important;
+}
+
+#tableBooking .col-list-item .image-homestay {
+  width: 80%;
+  height: 80%;
+  align-items: center;
+}
+
+#tableBooking .col-list-item .center-horizontal {
+  width: 90%;
+}
+
+#tableBooking #btnSeeAll {
+  margin-top: 40px;
+}
+
+.progress {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+/* For timeline part */
+
+.timeline {
+  position: relative;
+  padding: 0;
+  list-style: none;
+  min-height: 200px;
+}
+
+.timeline:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  width: 2px;
+  margin-left: -1.5px;
+  content: '';
+  background-color: #58FAF4;
+}
+
+.timeline > li {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 50px;
+}
+
+.timeline > li:after, .timeline > li:before {
+  display: table;
+  content: ' ';
+}
+
+.timeline > li:after {
+  clear: both;
+}
+
+.timeline > li .timeline-panel {
+  position: relative;
+  float: right;
+  width: 100%;
+  padding: 0 20px 0 100px;
+  text-align: left;
+}
+
+.timeline > li .timeline-panel:before {
+  right: auto;
+  left: -15px;
+  border-right-width: 15px;
+  border-left-width: 0;
+}
+
+.timeline > li .timeline-panel:after {
+  right: auto;
+  left: -14px;
+  border-right-width: 14px;
+  border-left-width: 0;
+}
+
+.timeline > li .timeline-image {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  margin-left: 0;
+  text-align: center;
+  color: white;
+  border: 5px solid #FBFBEF;
+  border-radius: 100%;
+  background-color: #0da8e9;
+}
+
+.timeline > li .timeline-image h4 {
+  font-size: 10px;
+  line-height: 14px;
+  margin-top: 12px;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
+  padding: 0 20px 0 100px;
+  text-align: left;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:before {
+  right: auto;
+  left: -15px;
+  border-right-width: 15px;
+  border-left-width: 0;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:after {
+  right: auto;
+  left: -14px;
+  border-right-width: 14px;
+  border-left-width: 0;
+}
+
+.timeline > li:last-child {
+  margin-bottom: 0;
+}
+
+.timeline .timeline-heading h4 {
+  margin-top: 0;
+  color: inherit;
+}
+
+.timeline .timeline-heading h4.subheading {
+  text-transform: none;
+}
+
+.timeline .timeline-body > ul,
+.timeline .timeline-body > p {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .timeline:before {
+    left: 50%;
+  }
+  .timeline > li {
+    min-height: 100px;
+    margin-bottom: 80px;
+  }
+  .timeline > li .timeline-panel {
+    float: left;
+    width: 41%;
+    padding: 0 20px 20px 30px;
+    text-align: right;
+  }
+  .timeline > li .timeline-image {
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+  }
+  .timeline > li .timeline-image h4 {
+    font-size: 13px;
+    line-height: 18px;
+    margin-top: 16px;
+  }
+  .timeline > li.timeline-inverted > .timeline-panel {
+    float: right;
+    padding: 0 30px 20px 20px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .timeline > li {
+    min-height: 150px;
+  }
+  .timeline > li .timeline-panel {
+    padding: 10px 20px 20px;
+  }
+  .timeline > li .timeline-image {
+    width: 140px;
+    height: 140px;
+    margin-left: -70px;
+  }
+  .timeline > li .timeline-image h4 {
+    font-size: 18px;
+    line-height: 26px;
+    margin-top: 30px;
+  }
+  .timeline > li.timeline-inverted > .timeline-panel {
+    padding: 10px 20px 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .timeline > li {
+    min-height: 170px;
+  }
+  .timeline > li .timeline-panel {
+    padding: 0 20px 20px 100px;
+  }
+  .timeline > li .timeline-image {
+    width: 170px;
+    height: 170px;
+    margin-left: -85px;
+  }
+  .timeline > li .timeline-image h4 {
+    margin-top: 40px;
+  }
+  .timeline > li.timeline-inverted > .timeline-panel {
+    padding: 0 100px 20px 20px;
+  }
+}
+
+/* investor list */
+
+#investorSwiper {
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+#investorSwiper .swiper-slide {
+  width: 300px;
+  height: 400px;
+}
+
+#investorSwiper .swiper-slide-active {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#investorSwiper .swiper-slide .image-investor {
+  width: 100%;
+  height: 75%;
+}
+
+#investorSwiper .swiper-slide .information-investor {
+  height: 25%;
+  width: 100%;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#investorSwiper .swiper-slide .information-investor .name {
+  font-weight: bold;
+  color: #0da8e9;
+  margin-bottom: 5px;
+}
+
+/* modal sign up / sign in */
+
+.asio-modal {
+  padding-right: 0px !important;
+}
+
+.asio-modal .modal-dialog {
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.asio-modal .modal-dialog .modal-content {
+  border-radius: 0px!important;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area {
+  text-align: center;
+  width: 100%;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area img {
+  width: 40px;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area a {
+  color: #0da8e9;
+}
+
+.asio-modal .modal-content #login {
+  width: 100%;
+  max-width: 350px;
+}
+
+.asio-modal .modal-content #signup {
+  width: 100%;
+  max-width: 350px;
+}
+
+#homestayInformationModal .modal-dialog, #packageLoanInformationModal .modal-dialog {
+  width: 100%;
+  max-width: 600px;
+}
+
+.asio-modal .modal-dialog .header-jumbotron {
+  padding: 0px 0px;
+  min-width: 50%;
+  border-right: 5px solid transparent;
+}
+
+.asio-modal .modal-dialog .jumbotron {
+  padding: 10px 15px;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  background: #EFF8FB;
+} 
+
+.asio-modal .modal-dialog .jumbotron .row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+input.form-control,
+textarea.form-control,
+select.form-control,
+.checkbox {
+  padding: 15px 5px;
+  margin: 0 auto;
+  border-radius: 0px;
+  max-width: 350px;
+}
+
+input.form-control,
+select.form-control {
+  height: auto;
+  padding-left: 15px;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.form-control:focus {
+  border-color: #0da8e9;
+  box-shadow: none;
+}

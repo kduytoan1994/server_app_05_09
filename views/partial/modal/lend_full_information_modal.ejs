@@ -1,0 +1,101 @@
+<div class="asio-modal modal fade" id="fullLendingInformationModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content  book-effect">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="d-block icon-area">
+          <div>
+            <img class="m-auto" src="img/icon/icons-money.png" />
+          </div>
+          <div>
+            <a class="m-auto text-primary font-weight-bold">Loan information</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body scrollbar-div">
+
+        <div class="basic-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Money and range time</span>
+          </div>
+          <div class="jumbotron">
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Total lend money:</div>
+              <div class="col-md-7 font-weight-bold text-primary" id="fullLendingModalTotalMoney"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Start time:</div>
+              <div class="col-md-7" id="fullLendingModalStartTime"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Total time:</div>
+              <div class="col-md-7" id="fullLendingModalTotalTime"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Interest:</div>
+              <div class="col-md-7" id="fullLendingModalInterest"></div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="hr-giant" />
+
+        <div class="advance-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Interest Information</span>
+          </div>
+          <div class="jumbotron">
+            <div class="row not-margin-row hide-for-completed">
+              <div class="col-md-5 font-weight-bold">Next interest money:</div>
+              <div class="col-md-7" id="fullLendingModalNextInterestMoney"></div>
+            </div>
+            <hr class="hr-tiny hide-for-completed" />
+            <div class="row not-margin-row hide-for-completed">
+              <div class="col-md-5 font-weight-bold">Interest pay date:</div>
+              <div class="col-md-7" id="fullLendingModalNextInterestDate"></div>
+            </div>
+            <hr class="hr-tiny hide-for-completed" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Table interest pay:</div>
+
+              <div class="col-md-7 pr-0">
+                <table class="table table-bordered border-0 table-interest table-responsive">
+                  <thead>
+                    <tr class="text-black bg-white">
+                      <th style="width: 30%">Date</th>
+                      <th style="width: 40%">Money</th>
+                      <th style="width: 30%">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="fullLendingModalTableInterest">
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Total paid:</div>
+              <div class="col-md-7 font-weight-bold text-primary" id="fullLendingModalTotalPaid"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Total unpaid:</div>
+              <div class="col-md-7 font-weight-bold text-unpaid" id="fullLendingModalTotalUnPaid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer text-center">
+        <a class="text-muted m-auto" href="" data-dismiss="modal" data-target="fullLendingInformationModal">Close</a>
+      </div>
+    </div>
+  </div>
+</div>

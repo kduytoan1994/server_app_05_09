@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <% var title="Asio Lending" %>
+  <%- include partial/header %>
+
+  <head>
+
+    <link href="vendor/swiper/swiper.min.css" rel="stylesheet">
+
+    <link href="vendor/odometer/odometer-theme-plaza.css" rel="stylesheet">
+    <link href="vendor/odometer/odometer-theme-slot-machine.css" rel="stylesheet">
+
+    <link href="css/index.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <div class="body-container">
+      
+      <%- include partial/menu %>
+
+      <!-- Header -->
+
+      <header>
+        <div id="carouselBackground" class="carousel slide" data-ride="carousel" data-interval="4000">
+
+          <div class="carousel-inner" role="listbox">
+            <div id="firstBackground" class="carousel-item active">
+              <div class="carousel-caption d-md-block">
+                <h3>Total lend money</h3>
+                <div class="container">
+                  <div id="totalMoney" class="odometer odometer-theme-slot-machine">00000000</div>
+                  <div id="unitMoney">VND</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="secondBackground" class="carousel-item">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Valued from lending</h3>
+                <p>We provides lending system which invest to Home stay and Travel services of Asio.</p>
+                <a class="js-scroll-trigger btn btn-lg btn-warning text-white" id="btnFilter" href="javascript:void(0)">Filter lendings</a>
+              </div>
+            </div>
+          </div>
+
+          <a class="carousel-control-prev" href="#carouselBackground" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <a class="carousel-control-next" href="#carouselBackground" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div id="analysisPart">
+          <div class="background-image"></div>
+          <div class="row not-margin-row">
+            <div class="col-sm-6 col-md-4 element-analysis">
+              <div class="content-analysis center-total">
+                <div id="totalLender" class="odometer odometer-theme-plaza number-analysis">00000000</div>
+                <div id="unitLender" class="unit-analysis">Borrower</div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 element-analysis">
+              <div class="content-analysis center-total">
+                <div id="totalInvestor" class="odometer odometer-theme-plaza number-analysis">00000000</div>
+                <div id="unitInvestor" class="unit-analysis">Investors</div>
+              </div>
+            </div>
+
+            <div class="col-md-4 d-none d-md-block element-analysis">
+              <div class="content-analysis center-total">
+                <div id="totalTransaction" class="odometer odometer-theme-plaza number-analysis">00000000</div>
+                <div id="unitTransaction" class="unit-analysis">Transactions</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <hr class="hr-small">
+
+      <!-- Table list booking -->
+      <section id="tableBooking">
+        <div class="container">
+          <div class="card card-not-padding m-auto">
+            <div class="card-header text-center">
+              <h4 class="pull-left">
+                List of register loans
+              </h4>
+              <hr class="hr-primary" />
+            </div>
+            <div class="card-body">
+
+              <% 
+                if (result.list_loans.length > 0) {
+              %>
+              <div class="row not-margin-row top-table-booking">
+                <div class="col-list-item col-lg-4 col-md-5 col-5">
+                  <span class="center-horizontal font-weight-bold">Home stay</span>
+                </div>
+
+                <div class="col-list-item col-lg-2 col-md-3 d-none d-md-block">
+                  <span class="center-horizontal font-weight-bold">Type Homestay</span>
+                </div>
+
+                <div class="col-list-item col-lg-2 col-md-2 col-4">
+                  <span class="center-horizontal font-weight-bold">Borrow money</span>
+                </div>
+
+                <div class="col-list-item col-lg-2 d-none d-lg-block">
+                  <span class="center-horizontal font-weight-bold">Time borrow</span>
+                </div>
+
+                <div class="col-list-item col-lg-2 col-md-2 col-3">
+                  <span class="center-horizontal font-weight-bold">Interest</span>
+                </div>
+
+              </div>
+
+              <% 
+                }
+                var height_style = "";
+                if (result.list_loans.length > 5)  height_style = 'style=height:500px';
+              %>
+
+              <div id="tableListLending" <%= height_style %> class="swiper-container">
+                <div class="swiper-wrapper">
+
+                  <% 
+                    var play_list = "";
+
+                    if (result.list_loans.length > 5)  play_list = "swiper-slide";
+
+                    result.list_loans.forEach(function(loan) {
+                      var type_called = "text-white";
+                      if (loan.called == 0) type_called = "text-danger";
+                  %>
+
+                  <div class="<%= play_list %> row not-margin-row element-table-booking">
+                    <div class="col-list-item col-lg-4 col-md-5 col-5 row not-margin-row click-see-homestay" data-id="<%= loan.id %>">
+                      <div class="col-md-4 d-none d-md-flex pl-1 image-container image-homestay">
+                        <img src="<%= loan.avatar  %>"/>
+                      </div>
+
+                      <div class="col-md-8 col-12 pl-0">
+                        <div class="center-horizontal w-100">
+                          <span class="font-weight-bold text-primary"><%= loan.name  %></span>
+                          <hr class="hr-tiny">
+                          <span class="text-muted"><%= loan.address  %></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-list-item col-lg-2 col-md-3 d-none d-md-block">
+                      <span class="center-horizontal font-weight-bold"><%= loan.type  %></span>
+                    </div>
+
+                    <div class="col-list-item col-lg-2 col-md-2 col-4 click-see-loan-package" data-id="<%= loan.id %>">
+                      <div class="center-horizontal">
+                        <span class="font-weight-bold text-primary"><%= loan.money  %> VND</span>
+                        <hr class="hr-tiny">
+                        <div class="progress" style="width: 100%">
+                          <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="<%= loan.called  %>" aria-valuemin="0"
+                            aria-valuemax="100" style="width:<%= loan.called  %>%">
+                            <span class="<%= type_called  %>"><%= loan.called  %>%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-list-item col-lg-2 d-none d-lg-block">
+                      <div class="center-horizontal">
+                        <span class="text-muted"><%= loan.due_date  %></span>
+                        <hr class="hr-tiny">
+                        <span class="text-muted"><%= loan.range_time  %> months</span>
+                      </div>
+                    </div>
+
+                    <div class="col-list-item col-lg-2 col-md-2 col-3">
+                      <span class="center-horizontal font-weight-bold"><%= loan.interest %>%</span>
+                    </div>
+
+                  </div>
+
+                  <% }) %>
+
+                  <% if (result.list_loans.length == 0) { %>
+                  
+                    <div class="not-have-element d-block">
+                      No content table.
+                    </div>
+
+                  <% } %>
+                </div>
+              </div>
+              <% if (result.list_loans.length > 0) { %>
+                  
+                <div class="text-center">
+                  <a id="btnSeeAll" class="btn btn-primary btn-lg text-white">See all</a>
+                </div>
+
+              <% } %>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="hr-small">
+
+      <!-- How to lend -->
+      
+      <%- include partial/how_to_lend %>
+
+      <hr class="hr-small">
+
+      <%- include partial/list_investor %>
+      
+      <hr class="hr-small">
+
+      <%- include partial/footer %>
+      
+    </div>
+
+    <%- include partial/common_javascript -%>
+
+    <% var disable_choose_loan = false %>    
+
+    <% if (!session.login_status) { %>
+
+    <%- include partial/modal/sign_in_modal %>
+
+    <%- include partial/modal/sign_up_modal %>  
+
+    <script>
+      $("#btnSeeAll").addClass("sign-in-button");
+      $("#btnFilter").addClass("sign-in-button");
+    </script>
+    
+    <% } else { %>
+
+    <script>
+      callOnClick("#btnFilter", function() {
+        location.replace("filter_lending");
+      })
+
+      callOnClick("#btnSeeAll", function() {
+        location.replace("filter_lending");
+      })
+    </script>
+
+    <% } %>
+
+    <%- include partial/modal/home_stay_modal %>    
+            
+    <%- include partial/modal/loan_package_money_modal %>            
+
+    <!-- Swiper -->
+    <script src="vendor/swiper/swiper.min.js"></script>
+
+    <!-- Odometer -->
+    <script src="vendor/odometer/odometer.js"></script>
+
+    <!-- Custom scripts -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/index.js"></script>
+
+    <script>
+      var totalMoney = "<%= result.total_money %>";
+      var totalLender = "<%= result.total_borrower  %>";
+      var totalInvestor = "<%= result.total_investor  %>";
+      var totalTransaction = "<%= result.total_transaction  %>";
+
+      setTimeout(runShowingData, 700);
+    </script>
+
+  </body>
+
+</html>

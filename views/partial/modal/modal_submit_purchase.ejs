@@ -1,0 +1,109 @@
+<div class="asio-modal modal fade " id="submitPurchaseModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="d-block icon-area">
+            <div>
+              <img class="m-auto" src="img/icon/icons-money.png" />
+            </div>
+            <div>
+              <a class="m-auto text-primary font-weight-bold">Submit purchase</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body scrollbar-div">
+  
+          <div class="basic-information box-information">
+            <div class="header-jumbotron">
+              <span class="text-primary font-weight-bold">Your purchase lend</span>
+            </div>
+            <div class="jumbotron">
+              <div class="row not-margin-row">
+                <div class="col-md-5 font-weight-bold">Homestay name:</div>
+                <div class="col-md-7" id="modalSubmit_HomestayName"><%= result.homestay.name  %></div>
+              </div>
+              <hr class="hr-tiny" />
+              <div class="row not-margin-row">
+                <div class="col-md-5 font-weight-bold">Host name:</div>
+                <div class="col-md-7" id="modalSubmit_HostName"><%= result.homestay.host_name  %></div>
+              </div>
+              <hr class="hr-tiny" />
+              <div class="row not-margin-row">
+                <div class="col-md-5 font-weight-bold">Chosen packages:</div>
+                <div class="col-md-7" id="modalSubmit_ListChosenPackages">
+                  <div class="package-element-available text-primary">
+                    &#9745; &nbsp 4000000
+                  </div>
+                </div>
+              </div>
+              <hr class="hr-tiny" />
+              <div class="row not-margin-row">
+                <div class="col-md-5 font-weight-bold">Lend money:</div>
+                <div class="col-md-7 text-primary font-weight-bold" id="modalSubmit_TotalMoney"></div>
+              </div>
+              <hr class="hr-tiny" />
+              <div class="row not-margin-row">
+                <div class="col-md-5 font-weight-bold">Lending fee:</div>
+                <div class="col-md-7 text-primary font-weight-bold" id="modalSubmit_LendingFee"></div>
+              </div>
+              <hr class="hr-tiny" />
+              <div class="row not-margin-row">
+                <div class="col-md-5 font-weight-bold">Total purchase:</div>
+                <div class="col-md-7 text-primary font-weight-bold" id="modalSubmit_TotalPurchase"></div>
+              </div>
+      
+            </div>
+  
+          </div>
+  
+          <hr class="hr-giant" />
+
+          <div class="basic-information box-information">
+            <div class="header-jumbotron">
+              <span class="text-primary font-weight-bold">Your wallet</span>
+            </div>
+            <div class="jumbotron">
+              <div class="row not-margin-row">
+                <div class="col-md-5 font-weight-bold">Your ballance:</div>
+                <div class="col-md-7 text-danger font-weight-bold" id="modalSubmit_Balance"></div>
+              </div>
+
+              <hr class="hr-tiny"/>
+
+              <div class="row not-margin-row text-danger error-money" id="modalSubmit_NotEnoughNotice">
+                <div class="col-12">
+                  Your ballance is not enough to purchase for this lend. Please add money to your wallet and purchase it again.
+                </div>
+              </div>
+
+              <div class="row not-margin-row text-danger error-money" id="modalSubmit_PurchaseNotice">
+                <div class="col-12">
+                  Your purchase for this lending will be minus directly to your wallet balance. Authentication information will be sent to your Email.
+                </div>
+              </div>
+            </div>  
+          </div>
+
+        </div>
+  
+        <!-- Modal footer -->
+    
+        <div class="modal-footer">
+          <div class="row not-margin-row w-100">
+            <div class="col-6 pl-0">
+              <a class="btn btn-sm text-uppercase text-white" id="actionButton"></a>
+            </div>
+  
+            <div class="col-6 pr-0">
+              <a class="btn btn-danger btn-sm float-right text-white" data-dismiss="modal" data-target="submitPurchaseModal">Close</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

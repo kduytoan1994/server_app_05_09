@@ -1,0 +1,96 @@
+<!-- Menu -->
+<% if (typeof navshink === 'undefined') navshink="" %>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top <%= navshink %>" id="mainNav">
+  <div class="container d-block">
+    <div class="top_navigation row not-margin-row">
+      <img src="img/icon/home-logo-name.png" />
+    </div>
+
+    <div class="main_navigation">
+      <div class="float-left left-home-icon">
+        <div class="img-left-home-icon"></div>
+      </div>
+
+      <div class="float-left left-home-text">
+        <a class="navbar-brand js-scroll-trigger" href="/">Home</a>
+      </div>
+
+      <div class="float-right right-menu">
+        <div class="d-lg-none box-menu-button">
+          <button class="navbar-toggler navbar-toggler-right float-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+          </button>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase pl-2">
+
+            <% if (session.login_status == false) { %>
+
+            <li class="nav-item sign-in-button">
+              <a href="javascript:void(0)" class="nav-link">Sign in</a>
+            </li>
+
+            <li class="nav-item sign-up-button">
+              <a href="javascript:void(0)" class="nav-link">Sign up</a>
+            </li>
+
+            <% } else { %>
+
+              <% if (session.permission == session.INVESTOR) { %>
+              <li class="nav-item" >
+                <a class="nav-link" href="filter_lending">Filter Lending</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="manage_wallet">Manage Wallet</a>
+              </li>
+
+              <% } else if (session.permission == session.AGENCY) { %>
+
+              <li class="nav-item" >
+                <a class="nav-link" href="filter_lending">Filter Lending</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="host">Manage Host</a>
+              </li>
+              
+              <% } %>
+
+            <li class="nav-item d-block d-lg-none" >
+              <a class="nav-link" href="account">Account</a>
+            </li>
+
+            <li class="nav-item d-block d-lg-none log-out-button">
+              <a class="nav-link" href="logout">Log out</a>
+            </li>
+
+            <li class="nav-item dropdown d-none d-lg-block">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="img/icon/icons-user.png" class="profile-image img-circle"> <%= session.name %>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                  <a href="account">Account</a>
+                </li>
+                <li class="log-out-button">
+                  <a href="logout">
+                    Log out
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <% } %>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</nav>

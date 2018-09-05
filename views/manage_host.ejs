@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% var title="Asio Lending" %>
+<%- include partial/header %>
+
+<head>
+
+  <link href="css/manage_host.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <div class="body-container">
+    <!-- Menu -->
+
+    <% var navshink="navbar-shrink" %>
+    <%- include partial/menu %>
+
+    <!-- Content manage host -->
+
+    <div id="hostList">
+      <!-- Table list host -->
+      <section id="tableHost">
+        <div class="container">
+          <!-- Agency information -->
+
+          <div class="jumbotron">
+            <div class="container">
+              <div>
+                <img src="img/icon/icons-user.png" class="profile-image img-circle border-1">
+              </div>
+
+              <div class="name-agency">
+                <span>Agency Name: <%= session.name %></span>
+              </div>
+
+              <div class="number-host-agency text-muted">
+                <span>Area manage: <%= result.agency_area %></span>
+              </div>
+
+              <div class="number-host-agency text-muted">
+                <span>Total managing host: <%= result.list_hosts.length %></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-not-padding m-auto">
+            <div class="card-header text-center">
+              <h4 class="pull-left">
+                List Managing host
+              </h4>
+              <hr class="hr-primary" />
+            </div>
+            <div class="card-body">
+              <div class="row not-margin-row filter-bar">
+                <div class="col-md-3 pl-0">
+                  <a class="btn btn-primary text-white" id="addHost">Add host</a>
+                </div>
+                <div class="col-md-9"></div>
+              </div>
+            </div>
+
+            <% if (result.list_hosts.length > 0) { %>
+
+            <div class="row not-margin-row top-table-host">
+              <div class="col-list-item col-lg-3 col-md-3 col-5">
+                <span class="center-horizontal font-weight-bold">Host name</span>
+              </div>
+
+              <div class="col-list-item col-lg-3 col-md-3 col-4">
+                <span class="center-horizontal font-weight-bold">Email</span>
+              </div>
+
+              <div class="col-list-item col-lg-2 d-none d-lg-block">
+                <span class="center-horizontal font-weight-bold">Available money</span>
+              </div>
+
+              <div class="col-list-item col-lg-2 col-md-3 d-none d-md-block">
+                <span class="center-horizontal font-weight-bold">Host information</span>
+              </div>
+
+              <div class="col-list-item col-lg-2 col-md-3 col-3">
+                <div class="center-total">
+                  <span class="font-weight-bold">Option</span>
+                </div>
+              </div>
+            </div>
+
+            <% } %>
+
+            <div class="content-table-booking">
+              <% if (result.list_hosts.length == 0) { %>
+                <div class="not-have-element d-block">
+                  No content table.
+                </div>
+
+              <% } else { 
+                let i = 1;
+                result.list_hosts.forEach(function(host) {
+              %>
+
+              <div class="row not-margin-row element-table-host <% if (i%2==0) { %> even-index <% } %>">
+                <div class="col-list-item col-lg-3 col-md-3 col-5" data-toggle="modal" data-target="#hostInformationModal">
+                  <span class="center-horizontal font-weight-bold"><%=host.name%></span>
+                </div>
+
+                <div class="col-list-item col-lg-3 col-md-3 col-4">
+                  <span class="center-horizontal font-weight-bold"><%=host.email%></span>
+                </div>
+
+                <div class="col-list-item col-lg-2 d-none d-lg-block">
+                  <span class="center-horizontal font-weight-bold"><%= host.available_money %> VND</span>
+                </div>
+
+                <div class="col-list-item col-lg-2 col-md-3 d-none d-md-block see-host-detail" data-id=<%= host.id  %>>
+                  <span class="center-horizontal font-weight-bold text-primary">Click to see details</span>
+                </div>
+
+                <div class="col-list-item col-lg-2 col-md-3 col-3 row not-margin-row">
+                  <a class="center-total btn btn-sm btn-danger text-white text-uppercase" href="wallet_host?host=<%= host.id  %>">Wallet</a>
+                </div>
+              </div>
+
+              <% 
+                   i++;
+                  }); 
+                }
+              %>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  
+    <%- include partial/footer %>
+  </div>  
+
+  <%- include partial/common_javascript %>
+
+  <%- include partial/modal/host_information_modal %>
+
+  <%- include partial/modal/add_host_modal %>
+  
+  <!-- Custom scripts -->
+  <script src="js/manage_host.js"></script>
+</body>
+
+</html>

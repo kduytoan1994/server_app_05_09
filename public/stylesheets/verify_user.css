@@ -1,0 +1,36 @@
+#verifyUserFirst, #verifyUserSecond {
+  min-height: calc(100vh - 90px);
+  padding-top: 100px;
+}
+
+section#verifyUserSecond {
+  display: none;
+}
+
+.box-vertify {
+  background: white;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: 1px solid #eee;
+}
+
+.box-vertify .section-heading {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+section#verifyUserFirst #verifyUserStep1, section#verifyUserSecond #verifyUserStep2 {
+  margin-top: 50px;
+}
+
+.form-control {
+  max-width: 350px;
+  border-radius: 0px;
+  font-size: 15px;
+  padding: 8px;
+  margin: 0 auto;
+}
+
+.noticeVerify {
+  font-size: 14px;
+}

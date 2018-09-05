@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% var title="Asio Lending" %>
+<%- include partial/header %>
+
+<head>
+
+  <link href="css/filter_lending.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <div class="body-container">
+
+    <% var navshink="navbar-shrink" %>
+    <%- include partial/menu %>
+
+    <!-- Content list booking -->
+
+    <div id="lendingList">
+      <!-- Table list booking -->
+      <section id="tableBooking">
+        <div class="container">
+          <div class="card card-not-padding m-auto">
+            <div class="card-header text-center">
+              <h4 class="pull-left">
+                List of registered loans
+              </h4>
+              <hr class="hr-primary" />
+            </div>
+            <div class="card-body">
+              <div class="row not-margin-row filter-bar">
+                <div class="col-12 pl-0">
+                  <% var have_all_results = true %>
+                  <% var have_style = "" %>
+                  
+                  <%- include partial/input/choose_type %>
+                </div>
+              </div>
+
+              <div class="row not-margin-row top-table-booking have-element">
+                <div class="col-list-item col-lg-3 col-md-4 col-5">
+                  <span class="center-horizontal font-weight-bold">Home stay</span>
+                </div>
+
+                <div class="col-list-item col-lg-1 col-md-2 d-none d-md-block">
+                  <span class="center-horizontal font-weight-bold">Type</span>
+                </div>
+
+                <div class="col-list-item col-lg-3 col-md-2 col-4">
+                  <span class="center-horizontal font-weight-bold">Borrow money</span>
+                </div>
+
+                <div class="col-list-item col-lg-2 d-none d-lg-block">
+                  <span class="center-horizontal font-weight-bold">Time borrow</span>
+                </div>
+
+                <div class="col-list-item col-lg-1 col-md-2 d-none d-md-block">
+                  <span class="center-horizontal font-weight-bold">Interest</span>
+                </div>
+
+                <div class="col-list-item col-lg-2 col-md-2 col-3">
+                  <div class="center-total">
+                    <span class="font-weight-bold">Option</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="content-table-booking have-element" id="tableLoan">
+                
+              </div>
+
+              <div class="container pagination-table-booking not-margin-row have-element">
+                <ul class="pagination">
+                  <li class="page-item" id="previousButton">
+                    <a class="page-link" href="javascript:void(0)">Previous</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link font-weight-bold" href="javascript:void(0)" >
+                      Page <span id="numberPage"></span>
+                    </a>
+                  </li>
+                  <li class="page-item" id="nextButton">
+                    <a class="page-link" href="javascript:void(0)">Next</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="not-have-element text-muted mt-5">
+                <span>Empty table content.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <%- include partial/footer %>
+    
+  </div>
+
+  <%- include partial/common_javascript %>
+
+  <% var disable_choose_loan = false %>
+
+  <%- include partial/modal/home_stay_modal %>
+
+  <%- include partial/modal/loan_package_money_modal %>
+
+  <!-- Custom scripts -->
+  <script src="js/filter_lending.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+#lendingList {
+  min-height: calc(100vh - 90px);
+  padding-top: 66px;
+}
+
+/* For Table list booking */
+
+#tableBooking .card {
+  max-width: 1000px;
+  font-size: 15px;
+}
+
+#tableBooking #tableListLending {
+  height: 425px;
+}
+
+#tableBooking .card .filter-bar {
+  min-height: 70px;
+  border-bottom: 1px solid #CEE3F6;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+@media (max-width: 576px) {
+
+  #tableBooking .card .filter-bar > div {
+    max-width: 250px;
+  }
+}
+
+#tableBooking .filter-bar .form-control {
+  padding: 0px 5px;
+  border-radius: 0px;
+  font-size: 14px;
+  max-width: 190px!important;
+  padding-left: 5px;
+  float: left;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+
+  #tableBooking .filter-bar .form-control {
+    max-width: 150px!important;
+  }
+}
+
+#tableBooking .top-table-booking {
+  height: 80px;
+  background-color: #0da8e9;
+  border: 1px solid #c9c9c9;
+  border-right: 0px;
+  font-size: 15px;
+  color: white;
+}
+
+#tableBooking .element-table-booking {
+  height: 85px;
+  width: unset;
+  border-left: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+  font-size: 14px;
+}
+
+#tableBooking .col-list-item {
+  border-right: 1px solid #c9c9c9;
+  padding-left: 5px!important;
+}
+
+#tableBooking .col-list-item .center-horizontal {
+  width: 90%;
+}
+
+.progress {
+  margin-top: 10px;
+}
+
+#tableBooking .pagination-table-booking {
+  margin-top: 60px;
+  padding-right: 0px;
+}
+
+#tableBooking .pagination-table-booking ul {
+  float: right;
+}
+
+/* Modal information */
+
+.asio-modal {
+  padding-right: 0px !important;
+}
+
+.asio-modal .modal-dialog {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  max-width: 600px;
+}
+
+.asio-modal .modal-dialog .modal-content {
+  border-radius: 0px!important;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area {
+  text-align: center;
+  width: 100%;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area img {
+  width: 40px;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area a {
+  color: #0da8e9;
+}
+
+.asio-modal .modal-dialog .header-jumbotron {
+  padding: 0px 0px;
+  min-width: 50%;
+  border-right: 5px solid transparent;
+}
+
+.asio-modal .modal-dialog .jumbotron {
+  padding: 10px 15px;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  background: #EFF8FB;
+} 
+
+.asio-modal .modal-dialog .jumbotron .row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+

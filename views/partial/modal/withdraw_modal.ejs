@@ -1,0 +1,71 @@
+<div class="asio-modal modal fade " id="withdrawModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content book-effect">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="d-block icon-area">
+          <div>
+            <img class="m-auto" src="img/icon/ic_withdraw.png" />
+          </div>
+          <div>
+            <a class="m-auto font-weight-bold">Withdraw money</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+
+        <div class="row not-margin-row mt-3 mb-3">
+          <div class="col-12 pl-0 pr-0">
+            <input type="text" onkeyup="convert(this);" class="input-small-height input-money-bb form-control" id="moneyWithdraw" placeholder="Input your money" >
+            <span class="text-danger mt-3" id="errorWithdrawMoney">Your input is invalid</span>
+          </div>
+        </div>
+        <hr class="hr-giant" />
+
+        <div class="header-jumbotron">
+          <span class="text-primary font-weight-bold">Bank information</span>
+        </div>
+        <div class="jumbotron">
+          <div id="basicInformation">
+            <div class="form-group">
+              <span class="text-muted">Name Bank</span>
+              <input class="form-control input-small-height" id="nameBankWithdraw" type="text">
+            </div>
+
+            <div class="form-group">
+              <span class="text-muted">Bank branch</span>
+              <input class="form-control input-small-height" id="bankBranchWithdraw" type="text">
+            </div>
+
+            <div class="form-group">
+              <span class="text-muted">Account number</span>
+              <input class="form-control input-small-height" id="accountNumberWithdraw" type="text">
+            </div>
+
+            <div class="form-group">
+              <span class="text-muted">Name recipients</span>
+              <input class="form-control input-small-height" id="nameRecipientWithdraw" type="text">
+            </div>
+          </div>
+        </div>
+   
+      
+      </div>
+
+      <div class="modal-footer">
+        <div class="row not-margin-row w-100">
+          <div class="col-6 pl-0">
+            <a class="btn btn-primary btn-sm text-uppercase text-white" id="registerWithdraw">Register withdraw</a>
+          </div>
+
+          <div class="col-6 pr-0">
+            <a class="btn btn-danger btn-sm float-right text-white" data-dismiss="modal" data-target="withdrawModal">Close</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

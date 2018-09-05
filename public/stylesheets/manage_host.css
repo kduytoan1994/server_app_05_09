@@ -1,0 +1,168 @@
+#hostList {
+  min-height: calc(100vh - 90px);
+  padding-top: 66px;
+}
+
+/* For Table list host */
+
+#tableHost .jumbotron {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #EFF8FB;
+}
+
+#tableHost .jumbotron img {
+  width: 50px;
+  height: 50px;
+}
+
+#tableHost .jumbotron .name-agency {
+  margin-top: 30px;
+  font-weight: bold;
+  color: #0da8e9;
+  font-size: 18px;
+}
+
+#tableHost .jumbotron .address-agency, #tableHost .jumbotron .number-host-agency  {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#tableHost .card {
+  max-width: 1000px;
+  font-size: 15px;
+}
+
+#tableHost #tableListLending {
+  height: 330px;
+}
+
+#tableHost .card .filter-bar {
+  min-height: 70px;
+  border-bottom: 1px solid #CEE3F6;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+@media (max-width: 576px) {
+
+  #tableHost .card .filter-bar > div {
+    max-width: 250px;
+  }
+}
+
+#tableHost .filter-bar .form-control {
+  padding: 0px 5px;
+  border-radius: 0px;
+  font-size: 14px;
+  padding-left: 5px;
+  float: left;
+  max-width: unset;
+}
+
+#tableHost .top-table-host {
+  height: 60px;
+  background-color: #0da8e9;
+  border: 1px solid #c9c9c9;
+  border-right: 0px;
+  font-size: 15px;
+  color: white;
+}
+
+#tableHost .element-table-host {
+  height: 85px;
+  width: unset;
+  border-left: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+  font-size: 14px;
+  overflow: auto;
+}
+
+#tableHost .col-list-item {
+  border-right: 1px solid #c9c9c9;
+  padding-left: 5px!important;
+}
+
+#tableHost .pagination-table-host {
+  margin-top: 60px;
+  padding-right: 0px;
+}
+
+#tableHost .pagination-table-host ul {
+  float: right;
+}
+
+/* Modal information */
+
+.asio-modal {
+  padding-right: 0px !important;
+}
+
+.asio-modal .modal-dialog {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  max-width: 600px;
+}
+
+.asio-modal .modal-dialog .modal-content {
+  border-radius: 0px!important;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area {
+  text-align: center;
+  width: 100%;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area img {
+  width: 40px;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area a {
+  color: #0da8e9;
+}
+
+.asio-modal .modal-dialog .header-jumbotron {
+  padding: 0px 0px;
+  min-width: 50%;
+  border-right: 5px solid transparent;
+}
+
+.asio-modal .modal-dialog .jumbotron {
+  padding: 10px 15px;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  background: #EFF8FB;
+} 
+
+#addHostModal .jumbotron .text-muted, #editHostModal .jumbotron .text-muted {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.asio-modal .modal-dialog .jumbotron .row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.asio-modal .modal-dialog .basic-information {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.asio-modal .modal-dialog .box-information {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.asio-modal .modal-dialog .form-control, .btn {
+  border-radius: 0px;
+}
+
+.asio-modal .modal-dialog .modal-footer, .asio-modal .modal-dialog .modal-body {
+  margin-top: 10px;
+}

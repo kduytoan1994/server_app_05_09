@@ -1,0 +1,11 @@
+<span class="font-weight-bold text-muted float-left">Select homestay type</span><br/>
+<select class="form-control float-left <%= have_style %>" id="typeHomestay">
+
+  <% if (have_all_results) { %>
+    <option value="0">All results</option>
+  <% } %>
+
+  <option value="1">Normal</option>
+  <option value="2">Luxury</option>
+  <option value="3">Local</option>
+</select>

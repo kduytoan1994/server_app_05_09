@@ -1,0 +1,146 @@
+#manageWallet {
+  min-height: calc(100vh - 90px);
+  padding-top: 100px;
+}
+
+#walletManaging {
+  min-height: 600px;
+}
+
+#manageWallet .left-side-info, #manageWallet .right-side-list {
+  height: 100%;
+  margin: 0 auto;
+  border: 1px solid #dee2e6;
+}
+
+#manageWallet .left-side-info .avatar-name {
+  margin-top: 5px;
+}
+
+#manageWallet .left-side-info .avatar {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#manageWallet .left-side-info .avatar img{
+  width: 100%;
+  height: auto;
+  border: 1px solid #eee;
+  border-radius: 0px;
+}
+
+#manageWallet .left-side-info .bonus-information p{
+  font-size: 15px;
+}
+
+
+#manageWallet .left-side-info .money-information p{
+  font-size: 15px;
+}
+
+#manageWallet .left-side-info .money-information .text-danger {
+  font-size: 16px;
+}
+
+#manageWallet .left-side-info .money-option a {
+  width: 100%;
+}
+
+#manageWallet .left-side-info .money-option img {
+  height: 23px;
+}
+
+#manageWallet .right-side-list .tab-content {
+  border-top: 0px;  
+}
+
+#manageWallet .right-side-list .nav-tabs .nav-link {
+  border-top: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  font-size: 14px;
+}
+
+.top-table-loan {
+  height: 60px;
+  background-color: #0da8e9;
+  border: 1px solid #c9c9c9;
+  border-right: 0px;
+  font-size: 15px;
+  color: white;
+}
+
+.element-table-loan {
+  min-height: 90px;
+  font-size: 14px;
+
+  width: unset;
+  border-left: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.col-list-item {
+  border-right: 1px solid #c9c9c9;
+  padding-left: 5px!important;
+}
+
+.col-list-item .center-horizontal {
+  width: 90%;
+}
+
+
+.pagination-table-loan {
+  margin-top: 60px;
+  padding-right: 0px;
+}
+
+.pagination-table-loan ul {
+  float: right;
+}
+
+
+.asio-modal {
+  padding-right: 0px !important;
+}
+
+.asio-modal .modal-dialog {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  max-width: 600px;
+}
+
+.asio-modal .modal-dialog .modal-content {
+  border-radius: 0px!important;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area {
+  text-align: center;
+  width: 100%;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area img {
+  width: 40px;
+}
+
+.asio-modal .modal-dialog .modal-header .icon-area a {
+  color: #0da8e9;
+}
+
+.asio-modal .modal-dialog .header-jumbotron {
+  padding: 0px 0px;
+  min-width: 50%;
+  border-right: 5px solid transparent;
+}
+
+.asio-modal .modal-dialog .jumbotron {
+  padding: 10px 15px;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  background: #EFF8FB;
+} 
+
+.asio-modal .modal-dialog .jumbotron .row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

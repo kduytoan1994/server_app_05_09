@@ -1,0 +1,39 @@
+<div class="asio-modal modal fade " id="addToWalletModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content book-effect">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="d-block icon-area">
+          <div>
+            <img class="m-auto" src="img/icon/add_to_wallet.png" />
+          </div>
+          <div>
+            <a class="m-auto font-weight-bold">Add to wallet</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+
+        <div class="basic-information box-information mt-5 mb-5">
+          <div class="row not-margin-row">
+            <div class="col-7">
+              <input type="text" onkeyup="convert(this);"  class="input-small-height input-money-bb form-control" id="addMoney" placeholder="Input your money">
+              <span class="text-danger mt-3" id="errorMoney">Your input is invalid</span>
+            </div>
+            <div class="col-5">
+              <a id="submitAddToWallet" class="btn btn-primary text-white float-right">Add to wallet</a>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+
+      <div class="modal-footer text-center">
+        <a class="text-muted m-auto" href="" data-dismiss="modal" data-target="addToWalletModal">Close</a>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="asio-modal modal fade" id="addHostModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="d-block icon-area">
+          <div>
+            <img class="m-auto" src="img/icon/home-logo.png" />
+          </div>
+          <div>
+            <a class="navbar-brand js-scroll-trigger m-auto">Add host</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-3">
+        <span class="text-danger warning-add-host d-none">Not valid email</span>
+      </div>
+        
+      <!-- Modal body -->
+      <div class="modal-body scrollbar-div">
+
+        <div class="header-jumbotron">
+          <span class="text-primary font-weight-bold">Basic Information</span>
+        </div>
+        <div class="jumbotron">
+          <div id="basicInformation">
+            <div class="form-group">
+              <span class="text-muted">Host name</span>
+              <input class="form-control input-small-height" id="nameAddHost" type="text">
+            </div>
+
+            <div class="form-group">
+              <span class="text-muted">Host email</span>
+              <input class="form-control input-small-height" id="emailAddHost" type="email">
+            </div>
+
+            <div class="form-group">
+              <span class="text-muted">Host phone number</span>
+              <input class="form-control input-small-height" id="phoneNumberAddHost" type="tel">
+            </div>
+
+            <div class="form-group">
+              <span class="text-muted">Host address</span>
+              <input class="form-control input-small-height" id="addressAddHost" type="text">
+            </div>
+          </div>
+        </div>
+        <hr class="hr-giant" />
+        <div class="header-jumbotron" data-toggle="collapse" data-target="#verifyInformation">
+          <span class="text-primary font-weight-bold">Verify Information</span>
+        </div>
+        <div class="jumbotron">
+          <form id="verifyInformation" enctype="multipart/form-data">
+            <div class="form-group mt-2">
+              <span class="text-muted">User photo</span>
+              <input type="file" class="form-control-file border" id="userPhotoAddHost" accept="image/x-png,image/gif,image/jpeg">
+            </div>
+
+            <div class="form-group mt-2">
+              <span class="text-muted">ID number</span>
+              <input class="form-control input-small-height" id="idNumberAddHost" type="number">
+            </div>
+
+            <div class="form-group mt-2">
+              <span class="text-muted">ID photo (first part)</span>
+              <input type="file" class="form-control-file border" id="idPhotoFirstAddHost" accept="image/x-png,image/gif,image/jpeg">
+            </div>
+
+            <div class="form-group mt-2">
+              <span class="text-muted">ID photo (second part)</span>
+              <input type="file" class="form-control-file border" id="idPhotoSecondAddHost" accept="image/x-png,image/gif,image/jpeg">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <div class="row not-margin-row w-100">
+          <div class="col-6 pl-0">
+            <a class="btn btn-sm btn-primary text-white text-uppercase float-left" id="submitAddHost">Add host</a>
+          </div>
+
+          <div class="col-6 pr-0">
+            <a class="btn btn-sm btn-danger text-white float-right" data-dismiss="modal" data-target="addHostModal">&nbsp Close &nbsp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

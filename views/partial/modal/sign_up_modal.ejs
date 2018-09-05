@@ -1,0 +1,61 @@
+<div class="asio-modal modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="d-block icon-area">
+          <div>
+            <img class="m-auto" src="img/icon/home-logo.png" />
+          </div>
+          <div>
+            <a class="navbar-brand js-scroll-trigger m-auto">Asio Pay</a>
+          </div>
+        </div>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div id="signUpForm" name="signUp">
+
+          <div class="form-group">
+            <input class="form-control" id="name_register" type="text" placeholder="Your Name *">
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" id="email_register" type="email" placeholder="Your Email *">
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" id="password_register" type="password" placeholder="Your Password *">
+          </div>
+
+          <div class="form-group">
+            <input class="form-control" id="password_retype" type="password" placeholder="Retype your Password *">
+          </div>
+
+          <div class="form-group text-center">
+            <p class="text-danger warning-signup d-none">Not valid email</p>
+          </div>
+
+          <div class="form-group text-center mt-5">
+            <a id="signup" class="btn btn-lg btn-primary text-white" id="signup">Sign up</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer text-center">
+        <p class="text-muted m-auto">By click on sign up button, you agree with
+          <a class="text-muted" href="">
+            <u>our term</u>
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/modal/sign_up_modal.js"></script>

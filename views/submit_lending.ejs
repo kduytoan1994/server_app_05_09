@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% var title="Asio Lending" %>
+<%- include partial/header %>
+
+<head>
+  <link href="css/submit_lending.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+  <div class="body-container">
+    <!-- Menu -->
+
+    <% var navshink="navbar-shrink" %>
+    <%- include partial/menu %>
+
+    <hr class="hr-small">
+
+    <section id="submitLending">
+      <div class="container big-container">
+        <div class="row not-margin-row">
+          <div class="col-lg-2"></div>
+
+          <div class="col-lg-8 text-center box-submit-lend book-effect">
+            <div class="text-center">
+              <p class="section-heading text-uppercase">Loan information</p>
+              <hr class="hr-primary" />
+            </div>
+
+            <div id="contentBoxSubmit">
+              <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+
+                  <div class="basic-information box-information">
+                    <div class="header-jumbotron">
+                      <span class="text-primary font-weight-bold">Money and range time</span>
+                    </div>
+                    <div class="jumbotron">
+
+                      <% if (count_chosen > 0) { %>
+                      
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Chosen packages:</div>
+                        <div class="col-md-7">
+
+                          <% result.list_packages.forEach (package => {
+                            if (package.chosen) { %>
+                              <div class="package-element-not-available text-muted">
+                                &#215; &nbsp <%= package.money_showing %>
+                              </div>
+                          <% }}) %>
+
+                        </div>
+                      </div>
+                      <hr class="hr-tiny" />
+
+                      <% } %>
+
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Remain packages:</div>
+                        <div class="col-md-7">
+                          <% result.list_packages.forEach (package => {
+                            if (!package.chosen) { %>
+                              <div class="checkbox">
+                                <label class="mb-2">
+                                  <input type="checkbox" class="checkbox-package"  data-id="<%= package.id  %>" value="<%= package.money  %>">&nbsp <%=package.money_showing %>
+                                </label>
+                              </div>
+                          <% }}) %>
+                        </div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Total chosen money:</div>
+                        <div class="col-md-7 font-weight-bold text-primary" id="totalChosenMoney">0 VND</div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Total time:</div>
+                        <div class="col-md-7 font-weight-bold text-primary"><%= result.loan.range_time %> months</div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Your interest rate:</div>
+                        <div class="col-md-7 font-weight-bold text-primary" id="interestLend">0% / month</div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Total money receive:</div>
+                        <div class="col-md-7 font-weight-bold text-primary" id="totalReceiveMoney">0 VND</div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Profit margin:</div>
+                        <div class="col-md-7 font-weight-bold text-primary" id="profitMargin">0%</div>
+                      </div>
+                      <hr class="hr-tiny for-table-interest" />
+                      <div class="row not-margin-row for-table-interest">
+                        <div class="col-md-5 font-weight-bold">Table interest range:</div>
+
+                        <div class="col-md-7">
+                          <table class="table table-bordered border-0 table-interest text-left">
+                            <thead>
+                              <tr class="bg-primary text-white">
+                                <th style="width: 60%">Money</th>
+                                <th style="width: 40%">Interest</th>
+                              </tr>
+                            </thead>
+                            <tbody id="listMoneyInterest">
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="hr-giant" />
+
+                  <div class="basic-information box-information">
+                    <div class="header-jumbotron">
+                      <span class="text-primary font-weight-bold">Host Information</span>
+                    </div>
+                    <div class="jumbotron">
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Full name:</div>
+                        <div class="col-md-7"><%= result.homestay.host_name  %></div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Address:</div>
+                        <div class="col-md-7"><%= result.homestay.host_address  %></div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Phone number:</div>
+                        <div class="col-md-7"><%= result.homestay.phonenumber  %></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="hr-giant" />
+
+                  <div class="basic-information box-information">
+                    <div class="header-jumbotron">
+                      <span class="text-primary font-weight-bold">Home stay Information</span>
+                    </div>
+                    <div class="jumbotron">
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Name homestay:</div>
+                        <div class="col-md-7"><%= result.homestay.name  %></div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Type homestay:</div>
+                        <div class="col-md-7"><%= result.homestay.type  %></div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Address:</div>
+                        <div class="col-md-7"><%= result.homestay.address  %></div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Description:</div>
+                        <div class="col-md-7"><%= result.homestay.description  %></div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-5 font-weight-bold">Photos:</div>
+                        <div class="col-md-7">
+                          <% result.homestay.list_photos.forEach(photo => { %>
+                          <div class="image-box w-100">
+                            <img class="image-description" src="<%= photo %>" />
+                          </div>
+
+                          <% }) %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="hr-giant" />
+                  <div class="basic-information box-information">
+                    <div class="header-jumbotron">
+                      <span class="text-primary font-weight-bold">Advance homestay info</span>
+                    </div>
+                    <div class="jumbotron">
+                      <div class="row not-margin-row">
+                        <div class="col-md-6 font-weight-bold">Distance to service center:</div>
+                        <div class="col-md-6"><%= result.homestay.distanceCenter  %></div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-6 font-weight-bold">Distance to main road:</div>
+                        <div class="col-md-6"><%= result.homestay.distanceMainRoad  %></div>
+                      </div>
+                      <hr class="hr-tiny" />
+                      <div class="row not-margin-row">
+                        <div class="col-md-6 font-weight-bold">Distance to diff homestay:</div>
+                        <div class="col-md-6"><%= result.homestay.distanceDiffHomestay  %></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="hr-giant" />
+                  <div class="clearfix"></div>
+
+                  <input type="hidden" id="idLoan" value="<%= result.loan.id %>"/>
+                  <input type="hidden" id="rangeTime" value="<%= result.loan.range_time %>"/>
+
+                  <div class="col-lg-12 text-center">
+                    <a id="submitButton" class="btn btn-primary text-uppercase text-white">Submit purchase</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <%- include partial/footer %>
+  </div>
+
+  <%- include partial/common_javascript %>
+
+  <%- include partial/modal/modal_submit_purchase %>  
+
+  <script src="js/submit_lending.js"></script>
+
+</body>
+
+</html>

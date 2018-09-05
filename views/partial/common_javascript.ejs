@@ -1,0 +1,192 @@
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Common js -->
+<script src="js/main.js"></script>
+
+<script>
+  var block_list = [-500, -400, -300];
+  var not_enough_money = -100;
+  var success_code = 200;
+  var unit_money = " VND";
+
+  var startLoading = function () {
+    $("#page-top").addClass("loading-page");
+  }
+
+  var endLoading = function () {
+    $("#page-top").removeClass("loading-page");
+  }
+
+  var alertCommonError = function () {
+    openNotificationBox("Something went wrong with your action or error on connecting to server.<br><br>Please try again!", 1, "danger", false, doNothing);
+  }
+
+  var doNothing = function () {
+    // do nothing
+  }
+
+  let convertStringToNumber = function (number) {
+    var i = 1;
+    var strResult = "";
+    while (number > 0) {
+      strResult = (number % 10) + strResult;
+      number = Math.floor(number / 10);
+      if (i % 3 == 0 && number > 0) {
+        strResult = "." + strResult;
+      }
+      i++;
+    }
+    return strResult;
+  }
+
+  var isEmail = function(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+  }
+
+  var isPhoneNumber = function(phonenumber) {
+    var filter = /^[0-9-+]+$/;
+    if (filter.test(phonenumber)) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  var makeMoneyForm = function (money, hide_unit = false) {
+    if (money == 0) return "0" + (hide_unit ? "" : unit_money);
+    if (money == null || money == undefined || money == "") return "0" + (hide_unit ? "" : unit_money);
+
+    money = (Math.round(money*1000000 / 1000)) * 1000;
+
+    return convertStringToNumber(money) + (hide_unit ? "" : unit_money);
+  }
+
+  var checkResultPost = function (result) {
+    if (block_list.indexOf(result) != -1) {
+      location.reload();
+    } else {
+      alertCommonError();
+    }
+  }
+
+  var callOnClick = function (button, action) {
+    $(document).off("click", button).on("click", button, function () {
+      action(this);
+    });
+  }
+
+  var callOnEnter = function(button, action) {
+    jQuery(document).on('keydown', button, function(ev) {
+      if(ev.which === 13) {
+        action(this);
+        return false;
+      }
+    });
+  }
+
+  var openNotificationBox = function (message, type, color, aligncenter, close, ok) {
+    if (typeof close == undefined) close = function () { location.reload() };
+    if (typeof ok == undefined) ok = function () { location.reload() };
+
+    $("#notificationBox #notificationBoxMessage").html(message);
+    $("#notificationBox #notificationBoxMessage").removeClass("text-primary");
+    $("#notificationBox #notificationBoxMessage").removeClass("text-danger");
+    $("#notificationBox #notificationBoxMessage").removeClass("text-warning");
+    $("#notificationBox #notificationBoxMessage").addClass("text-" + color);
+    if (!aligncenter) {
+      $("#notificationBox .modal-body").removeClass("text-center");
+    } else {
+      $("#notificationBox .modal-body").addClass("text-center");
+    }
+
+    if (type == 1) {
+      $(".modal-footer-1").show();
+      $(".modal-footer-2").hide();
+    } else {
+      $(".modal-footer-1").hide();
+      $(".modal-footer-2").show();
+
+      callOnClick(".accept-notification-box", function () {
+        ok();
+      });
+    }
+
+    $("#notificationBox").modal("show");
+
+    callOnClick(".close-notification-box", function () {
+      $("#notificationBox").modal("hide");      
+      close();
+    });
+  }
+
+  var hideNotificationBox = function() {
+    $("#notificationBox").modal("hide");
+  }
+
+  var runShowingData = function () {
+    $("#totalMoney").html(totalMoney * 1000000);
+    $("#totalLender").html(totalLender);
+    $("#totalInvestor").html(totalInvestor);
+    $("#totalTransaction").html(totalTransaction);
+  };
+
+  var getFullyNumber = function(number) {
+    return (number >= 10 ? number+"" : "0"+number);
+  }
+
+  var calculateDateFromString = function(StringDate) {
+    var date = StringDate.split("-"); 
+
+    var NewDate = new Date();
+    NewDate.setDate(date[2]);
+    NewDate.setMonth(date[1]-1);    
+    NewDate.setFullYear(date[0]);
+    
+    return getFullyNumber(NewDate.getDate()) + "/" + getFullyNumber(NewDate.getMonth() + 1) + "/" + NewDate.getFullYear();
+  }
+
+  var convert = function(field){
+    var strk=field.value.trim();
+    str=clearDot(strk);
+    var stmp="";
+    if (str!=""){
+      var l=str.trim().length-1;
+      k=0;
+      for (i=l;i>=0;i--){
+        k++;
+        stmp= str.trim().substr(i,1) + stmp.trim();
+        if (str.trim().substr(i,1)=="."){
+            k=0;
+        }
+        if ((k==3)&&(i>0)){
+            k=0;
+          stmp= "." + stmp.trim();
+        }
+      }
+    }
+    field.value=stmp.trim();
+  }
+
+  var clearDot = function (st){
+    var stmp="";
+    if (st.trim()!=""){
+      var l=st.length;
+      for (i=0;i<l;i++){
+          if ((st.trim().substr(i,1)!=".")&&(st.trim().substr(i,1)!="-")&&(!isNaN(st.trim().substr(i,1))))
+          stmp= stmp.trim()+st.trim().substr(i,1);
+      }
+    }
+    return stmp.trim();
+  }
+
+  var convertMoney = function(money) {
+    return money.replace(/\./g, '');
+  }
+</script>

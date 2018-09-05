@@ -1,0 +1,93 @@
+<!-- user information modal -->
+
+<div class="asio-modal modal fade" id="hostInformationModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content  book-effect">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="d-block icon-area">
+          <div>
+            <img class="m-auto" src="img/icon/icons-user.png" />
+          </div>
+          <div>
+            <a class="m-auto text-primary font-weight-bold" id="modalHost_name"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body scrollbar-div">
+
+        <div class="basic-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Basic Information</span>
+          </div>
+          <div class="jumbotron">
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Address:</div>
+              <div class="col-md-7" id="modalHost_address"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Phone number:</div>
+              <div class="col-md-7" id="modalHost_phonenumber"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Email:</div>
+              <div class="col-md-7" id="modalHost_email"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="advance-information box-information">
+          <div class="header-jumbotron">
+            <span class="text-primary font-weight-bold">Advance Information</span>
+          </div>
+          <div class="jumbotron">
+                
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Registered loans:</div>
+              <div class="col-md-7" id="modalHost_registeredLoan"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Current loans:</div>
+              <div class="col-md-7" id="modalHost_currentLoan"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Completed loans:</div>
+              <div class="col-md-7" id="modalHost_completedLoan"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Available money:</div>
+              <div class="col-md-7" id="modalHost_availableMoney"></div>
+            </div>
+            <hr class="hr-tiny" />
+            <div class="row not-margin-row">
+              <div class="col-md-5 font-weight-bold">Total debt money:</div>
+              <div class="col-md-7" id="modalHost_debtMoney"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer text-center">
+        <div class="row not-margin-row w-100">
+          <div class="col-6 pl-0">
+            <a class="btn btn-sm btn-warning text-white text-uppercase float-left manage-wallet-modal">Wallet</a>            
+          </div>
+
+          <div class="col-6 pr-0">
+            <a class="btn btn-sm btn-danger text-white float-right" data-dismiss="modal" data-target="hostInformationModal">&nbsp Close &nbsp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

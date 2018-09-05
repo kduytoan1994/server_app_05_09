@@ -1,0 +1,54 @@
+<div class="asio-modal modal fade" id="editHostModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="d-block icon-area">
+          <div>
+            <img class="m-auto" src="img/icon/home-logo.png" />
+          </div>
+          <div>
+            <a class="navbar-brand js-scroll-trigger m-auto">Edit host</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body scrollbar-div">
+
+        <div class="header-jumbotron" data-toggle="collapse" data-target="#basicInformation">
+          <span class="text-primary font-weight-bold">Basic Information</span>
+        </div>
+        <div class="jumbotron">
+          <form id="editBasicInformation">
+            <div class="form-group">
+              <span class="text-muted">Host name</span>
+              <input class="form-control" id="editNameHost" type="text">
+            </div>
+
+            <div class="form-group">
+              <span class="text-muted">Host email</span>
+              <input class="form-control" id="editEmailHost" type="email">
+            </div>
+
+            <div class="form-group">
+              <span class="text-muted">Host phone number</span>
+              <input class="form-control" id="editPhoneNumberHost" type="tel">
+            </div>
+
+            <div class="form-group">
+              <span class="text-muted">Host address</span>
+              <input class="form-control" id="editAddressHost" type="text">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button id="submitEditHost" class="btn btn-primary m-auto">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</div>
