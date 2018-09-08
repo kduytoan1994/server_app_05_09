@@ -8,7 +8,7 @@ var config = require('../connection/config');
 var model = require('../model/model');
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('/', function(req, res){
   config.templatePostFunction(  
     config.command.getHomeInformation, 
     {}, 
